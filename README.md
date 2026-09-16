@@ -54,6 +54,7 @@ FROM
     tb_101.raw_pos.monthly_sales_summary
 GROUP BY sales_month
 HAVING COUNT(*) > 1;
+```sql
 
 ##  使用環境
 - **DWH**: Snowflake (`tb_101`)
