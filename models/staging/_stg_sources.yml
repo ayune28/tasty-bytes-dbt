@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw_pos
+    description: Tasty Bytes POS raw data（Snowflake）
+    schema: raw_pos
+    tables:
+      - name: order_header
+        identifier: ORDER_HEADER
+        description: "注文ヘッダーの生データ"
+      - name: order_detail
+        identifier: ORDER_DETAIL
+        description: "注文明細の生データ"

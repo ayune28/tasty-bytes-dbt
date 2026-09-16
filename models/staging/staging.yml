@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "注文ヘッダーのステージングモデル"
+    columns:
+      - name: order_pk
+        description: "注文の一意な識別子"
+      - name: truck_fk
+        description: "トラックの識別子"
+      - name: customer_fk
+        description: "顧客の識別子"
+      - name: location_fk
+        description: "ロケーションの識別子"
+      - name: order_channel
+        description: "注文チャネル"
+      - name: order_timestamp
+        description: "注文日時"
+      - name: order_date
+        description: "注文日"
+
+  - name: stg_order_detail
+    description: "注文明細のステージングモデル"
+    columns:
+      - name: order_detail_pk
+        description: "注文明細の一意な識別子"
+      - name: order_fk
+        description: "注文の識別子"
+      - name: menu_item_fk
+        description: "メニューアイテムの識別子"
+      - name: quantity
+        description: "数量"
+      - name: unit_price
+        description: "単価"

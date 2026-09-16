@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "顧客ごとの注文回数や累計購入額（LTV）をまとめた顧客ディメンション"
+    columns:
+      - name: customer_id
+        description: "顧客ID（一意のキー）"
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: "注文ヘッダーと明細を結合したファクトテーブル"
+    columns:
+      - name: order_detail_id
+        description: "注文明細ID（一意のキー）"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "注文ID"
+        tests:
+          - not_null
+
+  - name: monthly_sales_summary
+    description: "月次の売上・注文件数・購入者数・客単価を集計したサマリーモデル"
+    columns:
+      - name: sales_month
+        description: "売上月（一意のキー）"
+        tests:
+          - unique
+          - not_null
+      - name: total_sales_dollars
+        description: "月の総売上（ドル）"
